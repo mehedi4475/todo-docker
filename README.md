@@ -26,7 +26,7 @@ A simple to-do list REST API built with Flask and PostgreSQL, fully containerize
 Clone the repository and start the containers:
 
 ```bash
-git clone https://github.com/<your-username>/todo-docker.git
+git clone https://github.com/mehedi4475/todo-docker.git
 cd todo-docker
 docker compose up --build
 ```
