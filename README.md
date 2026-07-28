@@ -27,7 +27,7 @@ A simple to-do list REST API built with Flask and PostgreSQL, fully containerize
 - Setting up an Nginx reverse proxy and securing a subdomain with a free Let's Encrypt SSL certificate, with automatic renewal
 
 ## Architecture / Flow
-'''
+```
 Developer push to main
 │
 ▼
@@ -44,7 +44,7 @@ Nginx (reverse proxy)
 │
 ▼
 App container (localhost:5000)
-'''
+```
 
 ## Prerequisites
 
@@ -109,7 +109,7 @@ Deployment uses a dedicated non-root user (`deployer`) and a separate SSH key cr
 - Only ports 80/443 (web) and 22 (SSH) are exposed; the app port is not directly reachable from outside
 
 ## Project Structure
-'''
+```
 todo-docker/
 ├── .github/
 │ └── workflows/
@@ -119,7 +119,7 @@ todo-docker/
 ├── Dockerfile # Container image definition
 ├── docker-compose.yml # Multi-container setup
 └── README.md
-'''
+```
 
 ## What I Learned
 
