@@ -30,6 +30,10 @@ def init_db():
 def home():
     return jsonify({"message": "Hello from auto-deploy! Version 4"})
 
+@app.route("/health")
+def health():
+    return jsonify({"status": "ok"})
+    
 @app.route("/todos", methods=["GET"])
 def list_todos():
     conn = get_db()
