@@ -28,7 +28,7 @@ def init_db():
 
 @app.route("/")
 def home():
-    return jsonify({"message": "Todo API is running. Use /todos"})
+    return jsonify({"message": "Hello from auto-deploy! Version 2"})
 
 @app.route("/todos", methods=["GET"])
 def list_todos():

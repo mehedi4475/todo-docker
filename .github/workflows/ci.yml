@@ -28,3 +28,16 @@ jobs:
           context: .
           push: true
           tags: ${{ secrets.DOCKERHUB_USERNAME }}/todo-docker:latest
+
+      # ৪. VPS-এ SSH দিয়ে ঢুকে নতুন image বসানো
+      - name: Deploy to VPS
+        uses: appleboy/ssh-action@v1
+        with:
+          host: ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_USER }}
+          key: ${{ secrets.VPS_SSH_KEY }}
+          script: |
+            cd ~/todo-app
+            docker compose pull
+            docker compose up -d
+            docker image prune -f
