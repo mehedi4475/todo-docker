@@ -28,7 +28,7 @@ def init_db():
 
 @app.route("/")
 def home():
-    return jsonify({"message": "Hello from auto-deploy! Version 5"})
+    return jsonify({"message": "Hello from auto-deploy! Version 6 for kuberneties"})
 
 @app.route("/health")
 def health():
