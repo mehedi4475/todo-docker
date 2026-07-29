@@ -27,6 +27,10 @@ spec:
           value: todo_user
         - name: DB_PASSWORD
           value: todo_pass
+        - name: NODE_NAME
+          valueFrom:
+            fieldRef:
+              fieldPath: spec.nodeName
 ---
 apiVersion: v1
 kind: Service
