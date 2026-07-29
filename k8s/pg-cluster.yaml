@@ -1,0 +1,32 @@
+apiVersion: postgresql.cnpg.io/v1
+kind: Cluster
+metadata:
+  name: todo-db
+spec:
+  instances: 3
+
+  storage:
+    size: 1Gi
+
+  resources:
+    requests:
+      memory: "256Mi"
+      cpu: "100m"
+    limits:
+      memory: "512Mi"
+
+  bootstrap:
+    initdb:
+      database: todo_db
+      owner: todo_user
+      secret:
+        name: todo-db-credentials
+---
+apiVersion: v1
+kind: Secret
+metadata:
+  name: todo-db-credentials
+type: kubernetes.io/basic-auth
+stringData:
+  username: todo_user
+  password: todo_pass

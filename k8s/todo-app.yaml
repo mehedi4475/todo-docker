@@ -20,7 +20,7 @@ spec:
         - containerPort: 5000
         env:
         - name: DB_HOST
-          value: postgres
+          value: todo-db-rw
         - name: DB_NAME
           value: todo_db
         - name: DB_USER
